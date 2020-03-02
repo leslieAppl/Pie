@@ -13,6 +13,8 @@
 		CE43F838240CF77D00F5CEC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE43F836240CF77D00F5CEC7 /* Main.storyboard */; };
 		CE43F83A240CF78100F5CEC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE43F839240CF78100F5CEC7 /* Assets.xcassets */; };
 		CE43F83D240CF78100F5CEC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE43F83B240CF78100F5CEC7 /* LaunchScreen.storyboard */; };
+		CE43F849240CFA4500F5CEC7 /* MyModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43F847240CFA4500F5CEC7 /* MyModalVC.swift */; };
+		CE43F84A240CFA4500F5CEC7 /* MyModalVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE43F848240CFA4500F5CEC7 /* MyModalVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		CE43F839240CF78100F5CEC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE43F83C240CF78100F5CEC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE43F83E240CF78100F5CEC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE43F847240CFA4500F5CEC7 /* MyModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModalVC.swift; sourceTree = "<group>"; };
+		CE43F848240CFA4500F5CEC7 /* MyModalVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyModalVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,41 @@
 		CE43F82F240CF77D00F5CEC7 /* Pie */ = {
 			isa = PBXGroup;
 			children = (
+				CE43F846240CF95700F5CEC7 /* Model */,
+				CE43F845240CF95300F5CEC7 /* View */,
+				CE43F844240CF94C00F5CEC7 /* Controller */,
 				CE43F830240CF77D00F5CEC7 /* AppDelegate.swift */,
 				CE43F832240CF77D00F5CEC7 /* SceneDelegate.swift */,
-				CE43F834240CF77D00F5CEC7 /* ViewController.swift */,
 				CE43F836240CF77D00F5CEC7 /* Main.storyboard */,
 				CE43F839240CF78100F5CEC7 /* Assets.xcassets */,
 				CE43F83B240CF78100F5CEC7 /* LaunchScreen.storyboard */,
 				CE43F83E240CF78100F5CEC7 /* Info.plist */,
 			);
 			path = Pie;
+			sourceTree = "<group>";
+		};
+		CE43F844240CF94C00F5CEC7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CE43F834240CF77D00F5CEC7 /* ViewController.swift */,
+				CE43F847240CFA4500F5CEC7 /* MyModalVC.swift */,
+				CE43F848240CFA4500F5CEC7 /* MyModalVC.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CE43F845240CF95300F5CEC7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE43F846240CF95700F5CEC7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +157,7 @@
 			files = (
 				CE43F83D240CF78100F5CEC7 /* LaunchScreen.storyboard in Resources */,
 				CE43F83A240CF78100F5CEC7 /* Assets.xcassets in Resources */,
+				CE43F84A240CFA4500F5CEC7 /* MyModalVC.xib in Resources */,
 				CE43F838240CF77D00F5CEC7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +171,7 @@
 			files = (
 				CE43F835240CF77D00F5CEC7 /* ViewController.swift in Sources */,
 				CE43F831240CF77D00F5CEC7 /* AppDelegate.swift in Sources */,
+				CE43F849240CFA4500F5CEC7 /* MyModalVC.swift in Sources */,
 				CE43F833240CF77D00F5CEC7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
