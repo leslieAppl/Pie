@@ -8,15 +8,37 @@
 
 import UIKit
 
-class MyModalVC: UIViewController {
+protocol MyModalDelegate: class {
+    
+    func myModalDidFinish(controller: MyModalVC, pie: String)
+}
 
+class MyModalVC: UIViewController {
+    
+    var delegate: MyModalDelegate?
+    
+    @IBOutlet weak var pieLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
 
-
+    @IBAction func pieSelectionBtnPressed(_ sender: UIButton) {
+        
+        pieLbl.text = sender.titleLabel?.text
+        
+    }
+    
+    @IBAction func submitBtnPressed(_ sender: UIButton) {
+        
+        // Here to triger the delegate function
+        // meanwhile inputing 'MyModelVC' class's info via parameter
+        delegate?.myModalDidFinish(controller: self, pie: pieLbl.text!)
+        
+    }
+    
     /*
     // MARK: - Navigation
 
