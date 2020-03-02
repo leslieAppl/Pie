@@ -55,8 +55,9 @@
             @IBAction func myModalButton(_ sender: UIButton) {
                 
                 // here is the key for taking advatage of using Delegate!!
-                // assigning 'ViewController' instance to the MyModalVC's delegate
-                // for giving a chance to override MyModalVC's delegate functions
+                // Assign itself to pieVC’s delegate property for changing the Protocol’s Type ( because Protocol has no belonging to Any type)
+                //  To tell MyModalVC that its delegate property’s Protocol methods will be override in this ViewController class
+                // For giving a chance to override MyModalVC's delegate functions
                 pieVC.delegate = self
 
         //        pieVC.modalPresentationStyle = UIModalPresentationStyle.fullScreen
