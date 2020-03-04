@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailVC: UIViewController {
+class ShDetailVC: UIViewController {
     
     var delegate: ShoppingListVC!
 
@@ -42,6 +42,7 @@ class DetailVC: UIViewController {
     @IBAction func deleteBtnPressed(_ sender: UIButton) {
         
         deleteItem()
+        
     }
     
     func deleteItem() {
@@ -51,9 +52,11 @@ class DetailVC: UIViewController {
         AppData.instance.items.remove(at: selected)
         
         delegate.tableView.reloadData()
+
+        // navigation controller dismiss logic
+        navigationController?.popViewController(animated: true)
+        // view controller dismiss logic
+//        self.dismiss(animated: true, completion: nil)
         
-        self.dismiss(animated: true, completion: nil)
-        
-//        navigationController?.popViewController(animated: true)
     }
 }

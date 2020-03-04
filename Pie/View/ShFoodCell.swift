@@ -8,9 +8,9 @@
 
 import UIKit
 
-class FoodCell: UITableViewCell {
+class ShFoodCell: UITableViewCell {
 
-    @IBOutlet weak var foodCellView: FoodCellView!
+    @IBOutlet weak var foodCellView: ShFoodCellView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

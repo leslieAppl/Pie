@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FoodCellView: UIView {
+class ShFoodCellView: UIView {
     
     @IBOutlet var contentView: UIView!
     
@@ -30,7 +30,7 @@ class FoodCellView: UIView {
     
     func commonInit() {
         
-        Bundle.main.loadNibNamed("FoodCellView", owner: self, options: nil)
+        Bundle.main.loadNibNamed("ShFoodCellView", owner: self, options: nil)
         
         contentView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -43,11 +43,13 @@ class FoodCellView: UIView {
 
     }
     
-    func config(with index: IndexPath) {
+    func configView(with index: IndexPath) {
         
-        lable.text = AppData.instance.items[index.row]
+        let item = AppData.instance.items[index.row]
+        lable.text = item
+
+        let img = AppData.instance.details[item]![0]
+        image.image = UIImage(named: img)
         
-        let imageName = AppData.instance.items[index.row].lowercased()
-        image.image = UIImage(named: imageName)
     }
 }

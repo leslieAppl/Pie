@@ -17,11 +17,11 @@
 		CE43F84A240CFA4500F5CEC7 /* MyModalVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE43F848240CFA4500F5CEC7 /* MyModalVC.xib */; };
 		CE553AC5240F6C3700A2A428 /* ShoppingListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE553AC4240F6C3700A2A428 /* ShoppingListVC.swift */; };
 		CE553AC7240F75D800A2A428 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE553AC6240F75D800A2A428 /* AppData.swift */; };
-		CE553ACD240F79F500A2A428 /* FoodCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE553ACC240F79F500A2A428 /* FoodCellView.swift */; };
-		CE553ACF240F7A0D00A2A428 /* FoodCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE553ACE240F7A0D00A2A428 /* FoodCellView.xib */; };
-		CE553AD1240F818B00A2A428 /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE553AD0240F818B00A2A428 /* FoodCell.swift */; };
-		CE553AD3240F8A1700A2A428 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE553AD2240F8A1700A2A428 /* DetailVC.swift */; };
-		CE553AD5240F8A8400A2A428 /* AddItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE553AD4240F8A8400A2A428 /* AddItemVC.swift */; };
+		CE553ACD240F79F500A2A428 /* ShFoodCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE553ACC240F79F500A2A428 /* ShFoodCellView.swift */; };
+		CE553ACF240F7A0D00A2A428 /* ShFoodCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE553ACE240F7A0D00A2A428 /* ShFoodCellView.xib */; };
+		CE553AD1240F818B00A2A428 /* ShFoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE553AD0240F818B00A2A428 /* ShFoodCell.swift */; };
+		CE553AD3240F8A1700A2A428 /* ShDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE553AD2240F8A1700A2A428 /* ShDetailVC.swift */; };
+		CE553AD5240F8A8400A2A428 /* ShAddItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE553AD4240F8A8400A2A428 /* ShAddItemVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,11 +37,11 @@
 		CE43F848240CFA4500F5CEC7 /* MyModalVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyModalVC.xib; sourceTree = "<group>"; };
 		CE553AC4240F6C3700A2A428 /* ShoppingListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListVC.swift; sourceTree = "<group>"; };
 		CE553AC6240F75D800A2A428 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
-		CE553ACC240F79F500A2A428 /* FoodCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCellView.swift; sourceTree = "<group>"; };
-		CE553ACE240F7A0D00A2A428 /* FoodCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodCellView.xib; sourceTree = "<group>"; };
-		CE553AD0240F818B00A2A428 /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
-		CE553AD2240F8A1700A2A428 /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
-		CE553AD4240F8A8400A2A428 /* AddItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemVC.swift; sourceTree = "<group>"; };
+		CE553ACC240F79F500A2A428 /* ShFoodCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShFoodCellView.swift; sourceTree = "<group>"; };
+		CE553ACE240F7A0D00A2A428 /* ShFoodCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShFoodCellView.xib; sourceTree = "<group>"; };
+		CE553AD0240F818B00A2A428 /* ShFoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShFoodCell.swift; sourceTree = "<group>"; };
+		CE553AD2240F8A1700A2A428 /* ShDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShDetailVC.swift; sourceTree = "<group>"; };
+		CE553AD4240F8A8400A2A428 /* ShAddItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShAddItemVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +94,8 @@
 				CE43F847240CFA4500F5CEC7 /* MyModalVC.swift */,
 				CE43F848240CFA4500F5CEC7 /* MyModalVC.xib */,
 				CE553AC4240F6C3700A2A428 /* ShoppingListVC.swift */,
-				CE553AD2240F8A1700A2A428 /* DetailVC.swift */,
-				CE553AD4240F8A8400A2A428 /* AddItemVC.swift */,
+				CE553AD2240F8A1700A2A428 /* ShDetailVC.swift */,
+				CE553AD4240F8A8400A2A428 /* ShAddItemVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -103,9 +103,9 @@
 		CE43F845240CF95300F5CEC7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CE553ACC240F79F500A2A428 /* FoodCellView.swift */,
-				CE553ACE240F7A0D00A2A428 /* FoodCellView.xib */,
-				CE553AD0240F818B00A2A428 /* FoodCell.swift */,
+				CE553ACC240F79F500A2A428 /* ShFoodCellView.swift */,
+				CE553ACE240F7A0D00A2A428 /* ShFoodCellView.xib */,
+				CE553AD0240F818B00A2A428 /* ShFoodCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -177,7 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE43F83D240CF78100F5CEC7 /* LaunchScreen.storyboard in Resources */,
-				CE553ACF240F7A0D00A2A428 /* FoodCellView.xib in Resources */,
+				CE553ACF240F7A0D00A2A428 /* ShFoodCellView.xib in Resources */,
 				CE43F83A240CF78100F5CEC7 /* Assets.xcassets in Resources */,
 				CE43F84A240CFA4500F5CEC7 /* MyModalVC.xib in Resources */,
 				CE43F838240CF77D00F5CEC7 /* Main.storyboard in Resources */,
@@ -192,12 +192,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE43F835240CF77D00F5CEC7 /* MainVC.swift in Sources */,
-				CE553AD1240F818B00A2A428 /* FoodCell.swift in Sources */,
+				CE553AD1240F818B00A2A428 /* ShFoodCell.swift in Sources */,
 				CE553AC5240F6C3700A2A428 /* ShoppingListVC.swift in Sources */,
 				CE43F831240CF77D00F5CEC7 /* AppDelegate.swift in Sources */,
-				CE553ACD240F79F500A2A428 /* FoodCellView.swift in Sources */,
-				CE553AD5240F8A8400A2A428 /* AddItemVC.swift in Sources */,
-				CE553AD3240F8A1700A2A428 /* DetailVC.swift in Sources */,
+				CE553ACD240F79F500A2A428 /* ShFoodCellView.swift in Sources */,
+				CE553AD5240F8A8400A2A428 /* ShAddItemVC.swift in Sources */,
+				CE553AD3240F8A1700A2A428 /* ShDetailVC.swift in Sources */,
 				CE43F849240CFA4500F5CEC7 /* MyModalVC.swift in Sources */,
 				CE43F833240CF77D00F5CEC7 /* SceneDelegate.swift in Sources */,
 				CE553AC7240F75D800A2A428 /* AppData.swift in Sources */,

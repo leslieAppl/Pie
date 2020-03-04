@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddItemVC: UIViewController {
+class ShAddItemVC: UIViewController {
     
     var delegate: ShoppingListVC!
     
@@ -26,21 +26,9 @@ class AddItemVC: UIViewController {
         text = text?.trimmingCharacters(in: .whitespaces)
         
         if text != "" {
-            print("delegate.saveItem")
+            
             delegate.saveItem(title: text!)
             
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
