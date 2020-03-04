@@ -81,4 +81,33 @@
 
         }
 
+## Added Shopping List Project
+- Shopping List added Built AddItemVC
+- Shopping List Used 'delegate' Concept
+        
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            
+            if segue.identifier == "showDetailVC" {
+                
+                let detailVC = segue.destination as! DetailVC
+                
+                // assign self type into ‘DetailVC.delegate’ making a reference
+                detailVC.delegate = self
+                
+                if let path = tableView.indexPathForSelectedRow {
+                    print("vc.prepare(for segue:).transformingDataToDetailVC")
+                    detailVC.selected = path.row
+                    
+                }
+                
+            } else if segue.identifier == "showAddItem" {
+                
+                let addItemVC = segue.destination as! AddItemVC
+                
+                // assign self type into ‘AddItemVC.delegate’ making a reference
+                addItemVC.delegate = self
+            }
+        }
+
+- Shopping List added delete function
 

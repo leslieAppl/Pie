@@ -15,7 +15,7 @@ protocol MyModalDelegate: class {
 
 class MyModalVC: UIViewController {
     
-    var delegate: MyModalDelegate?
+    weak var delegate: MyModalDelegate?
     
     @IBOutlet weak var pieLbl: UILabel!
     
