@@ -61,6 +61,19 @@ class ShoppingListVC: UIViewController {
         
     }
     
+    @IBAction func editBtnPressed(_ sender: UIBarButtonItem) {
+        
+        if tableView.isEditing {
+            
+            tableView.setEditing(false, animated: true)
+            
+        } else {
+            
+            tableView.setEditing(true, animated: true)
+            
+        }
+    }
+    
     // AddItemVC.delegate function
     func saveItem(title: String) {
         
@@ -111,5 +124,48 @@ extension ShoppingListVC: UITableViewDataSource, UITableViewDelegate {
         
         performSegue(withIdentifier: "showDetailVC", sender: nil)
         
+    }
+    
+    // The hidden feature that simplifies the deletion of rows
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+    
+            let row = indexPath.row
+            let item = AppData.instance.items[row]
+            
+            AppData.instance.details.removeValue(forKey: item)
+            AppData.instance.items.remove(at: row)
+            
+            // Always have to update model first, then delete table view cell
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let button = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
+            
+            let row = indexPath.row
+            let item = AppData.instance.items[row]
+            
+            AppData.instance.details.removeValue(forKey: item)
+            AppData.instance.items.remove(at: row)
+            
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+            // otherwise the button is not removed
+            completion(true)
+            
+        }
+        
+        button.backgroundColor = .red
+        
+        let config = UISwipeActionsConfiguration(actions: [button])
+        config.performsFirstActionWithFullSwipe = true
+        
+        return config
+
     }
 }

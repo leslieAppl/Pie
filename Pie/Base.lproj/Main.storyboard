@@ -67,7 +67,7 @@
             </objects>
             <point key="canvasLocation" x="2023.2" y="126.35467980295567"/>
         </scene>
-        <!--Shopping ListVC-->
+        <!--List-->
         <scene sceneID="aRa-G2-rEf">
             <objects>
                 <viewController storyboardIdentifier="shoppingListVC" id="K7i-xM-vMZ" customClass="ShoppingListVC" customModule="Pie" customModuleProvider="target" sceneMemberID="viewController">
@@ -109,19 +109,26 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="X9U-oq-mel"/>
                     </view>
-                    <navigationItem key="navigationItem" id="aWf-f3-8Zy">
+                    <navigationItem key="navigationItem" title="List" id="aWf-f3-8Zy">
                         <barButtonItem key="leftBarButtonItem" image="return" catalog="system" id="QHj-mj-Rc6">
                             <color key="tintColor" red="1" green="0.59851241440000003" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="exitBtnPressed:" destination="K7i-xM-vMZ" id="5al-DR-QQJ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="YJE-E8-5uH">
-                            <color key="tintColor" red="1" green="0.59851241440000003" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <segue destination="3dE-L2-1QT" kind="show" identifier="showAddItem" id="KYt-GX-PYj"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="YJE-E8-5uH">
+                                <color key="tintColor" red="1" green="0.59851241440000003" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="3dE-L2-1QT" kind="show" identifier="showAddItem" id="KYt-GX-PYj"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="edit" id="ULx-y8-Ugp">
+                                <connections>
+                                    <action selector="editBtnPressed:" destination="K7i-xM-vMZ" id="zdh-YG-Kna"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="sna-1F-Byy" id="QVo-8f-pJi"/>
@@ -135,11 +142,15 @@
         <!--Navigation Controller-->
         <scene sceneID="2jp-Yy-6Fl">
             <objects>
-                <navigationController storyboardIdentifier="navigationController" automaticallyAdjustsScrollViewInsets="NO" id="ziU-Lf-JME" colorLabel="IBBuiltInLabel-Orange" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navigationController" automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="ziU-Lf-JME" colorLabel="IBBuiltInLabel-Orange" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="n9O-QL-B33">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.59851241440000003" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="0.59851241440000003" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -150,7 +161,7 @@
             </objects>
             <point key="canvasLocation" x="2852" y="126"/>
         </scene>
-        <!--test-->
+        <!--Sh DetailVC-->
         <scene sceneID="fvS-Qu-P4z">
             <objects>
                 <viewController storyboardIdentifier="detailVC" id="Pvy-gC-Dhn" customClass="ShDetailVC" customModule="Pie" customModuleProvider="target" sceneMemberID="viewController">
@@ -159,13 +170,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwP-Qh-IOZ">
-                                <rect key="frame" x="40" y="162" width="56.666666666666657" height="27.666666666666657"/>
+                                <rect key="frame" x="40" y="128" width="56.666666666666657" height="27.666666666666657"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sed-Nh-Bsa">
-                                <rect key="frame" x="40" y="229.66666666666663" width="150" height="400"/>
+                                <rect key="frame" x="40" y="195.66666666666663" width="150" height="400"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="c6V-Az-Hyy"/>
@@ -177,14 +188,14 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bagels" translatesAutoresizingMaskIntoConstraints="NO" id="y8X-DI-qjP">
-                                <rect key="frame" x="190" y="157" width="150" height="150"/>
+                                <rect key="frame" x="190" y="123" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="hfV-i3-nbn"/>
                                     <constraint firstAttribute="height" constant="150" id="pgl-sg-Hf8"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1x-zA-DCp">
-                                <rect key="frame" x="215" y="315" width="100" height="40"/>
+                                <rect key="frame" x="215" y="281" width="100" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="94Y-BT-X8H"/>
                                     <constraint firstAttribute="height" constant="40" id="IKg-Oy-4vi"/>
@@ -212,9 +223,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ILk-CW-0ci"/>
                     </view>
-                    <navigationItem key="navigationItem" title="test" prompt="test" id="GSX-T3-4Qn">
-                        <barButtonItem key="backBarButtonItem" title="test" id="VOi-Z6-8dw"/>
-                    </navigationItem>
                     <connections>
                         <outlet property="itemImg" destination="y8X-DI-qjP" id="z5g-3s-aaf"/>
                         <outlet property="itemLbl" destination="iwP-Qh-IOZ" id="0yd-D1-xMO"/>

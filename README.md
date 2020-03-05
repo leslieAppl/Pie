@@ -110,4 +110,12 @@
         }
 
 - Shopping List added delete function
+- Shopping List added an hidden feature that simplifies the deletion of rows and the execution of custom tasks
+
+        func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) 
+
+- Shopping List added Leading Swipe Action
+
+        func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
+
 

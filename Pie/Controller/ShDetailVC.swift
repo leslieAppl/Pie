@@ -21,16 +21,8 @@ class ShDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if selected != nil {
-            
-            let item = AppData.instance.items[selected]
-            
-            if let data = AppData.instance.details[item] {
-                itemLbl.text = item
-                itemImg.image = UIImage(named: data[0])
-                nutritionItemTxt.text = data[1]
-            }
-        }
+        loadData()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +35,21 @@ class ShDetailVC: UIViewController {
         
         deleteItem()
         
+    }
+    
+    func loadData() {
+        
+        if selected != nil {
+            
+            let item = AppData.instance.items[selected]
+            
+            if let data = AppData.instance.details[item] {
+                itemLbl.text = item
+                itemImg.image = UIImage(named: data[0])
+                nutritionItemTxt.text = data[1]
+            }
+        }
+
     }
     
     func deleteItem() {
