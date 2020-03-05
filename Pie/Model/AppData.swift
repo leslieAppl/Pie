@@ -15,9 +15,11 @@ class AppData {
     var items: [String] {
         
         didSet {
-            items.sort { (value1, value2) -> Bool in
-                value1 < value2
-            }
+            
+            // for moving table cell manually having to comment out the auto sorting process
+//            items.sort { (value1, value2) -> Bool in
+//                value1 < value2
+//            }
         }
     }
     

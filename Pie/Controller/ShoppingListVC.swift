@@ -168,4 +168,13 @@ extension ShoppingListVC: UITableViewDataSource, UITableViewDelegate {
         return config
 
     }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        
+        let item = AppData.instance.items[sourceIndexPath.row]
+        
+        AppData.instance.items.remove(at: sourceIndexPath.row)
+        
+        AppData.instance.items.insert(item, at: destinationIndexPath.row)
+    }
 }
