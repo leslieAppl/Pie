@@ -1,7 +1,8 @@
 # Pie
 
-## Implement Custom XIB UIViewController 
-## Using a Callback Delegate
+## Pie
+### Implement Custom XIB UIViewController 
+### Using a Callback Delegate
 
 ### MyModalVC class
         import UIKit
@@ -37,10 +38,10 @@
                 
             }
 
-### ViewController Class
+### PieVC Class
         import UIKit
 
-        class ViewController: UIViewController {
+        class PieVC: UIViewController {
             
             // using xib name to create an instance of the View Controller
             let pieVC = MyModalVC(nibName: "MyModalVC", bundle: nil)
@@ -81,7 +82,8 @@
 
         }
 
-## Added Shopping List Project
+## Shopping List
+### Introducing UITableView, UITableViewDataSource and UItableViewDelegate
 - Shopping List added Built AddItemVC
 - Shopping List Used 'delegate' Concept
         
@@ -122,4 +124,7 @@
 
         func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) 
 
-
+## Table View Controller
+### Introducing Table View Controller Class
+- Added MyTableVC
+- Implemented Refresh Control

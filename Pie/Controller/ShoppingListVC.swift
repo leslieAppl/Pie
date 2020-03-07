@@ -55,12 +55,6 @@ class ShoppingListVC: UIViewController {
         }
     }
     
-    @IBAction func exitBtnPressed(_ sender: UIBarButtonItem) {
-        
-        dismiss(animated: true, completion: nil)
-        
-    }
-    
     @IBAction func editBtnPressed(_ sender: UIBarButtonItem) {
         
         if tableView.isEditing {
@@ -140,6 +134,7 @@ extension ShoppingListVC: UITableViewDataSource, UITableViewDelegate {
             
             // Always have to update model first, then delete table view cell
             tableView.deleteRows(at: [indexPath], with: .automatic)
+
         }
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainVC: UIViewController {
+class PieVC: UIViewController {
     
     let pieVC = MyModalVC(nibName: "MyModalVC", bundle: nil)
     
@@ -30,17 +30,19 @@ class MainVC: UIViewController {
     
     @IBAction func shoppingListBtnPressed(_ sender: UIButton) {
         
-        let nav = storyboard?.instantiateViewController(identifier: "navigationController") as! UINavigationController
-        
-        nav.modalPresentationStyle = .fullScreen
-        
-        present(nav, animated: true, completion: nil)
+        performSegue(withIdentifier: "showShoppingListVC", sender: nil)
         
     }
 
+    @IBAction func tableVCBtnPressed(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "showMyTableVC", sender: nil)
+        
+    }
+    
 }
 
-extension MainVC: MyModalDelegate {
+extension PieVC: MyModalDelegate {
     
     // here override the delegate's method
     // with the chance of manipulating data from 'MyModalVC' class injected via parameter
