@@ -40,6 +40,12 @@ class PieVC: UIViewController {
         
     }
     
+    @IBAction func staticTableBtnPressed(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "showStaticTableVC", sender: nil)
+        
+    }
+    
 }
 
 extension PieVC: MyModalDelegate {

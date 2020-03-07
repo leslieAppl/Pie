@@ -127,3 +127,7 @@
 ### Introducing Table View Controller Class
 - Added MyTableVC
 - Implemented Refresh Control
+
+## Static Table
+- Added static table
+
