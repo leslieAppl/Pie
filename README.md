@@ -130,4 +130,9 @@
 
 ## Static Table
 - Added static table
-- Added Search Control
+
+## Search Controller
+- Implemented Search Controller
+
+## Search Bar
+- Implemented SearchBar delegate - selectedScopeButtonIndex

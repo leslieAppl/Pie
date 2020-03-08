@@ -36,8 +36,8 @@
                                     <action selector="myModalButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zuu-AO-Qz1"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="b4g-Fb-L70">
-                                <rect key="frame" x="16" y="266.33333333333331" width="119" height="77"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="b4g-Fb-L70">
+                                <rect key="frame" x="16" y="288.33333333333331" width="119" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUk-Nz-uy2">
                                         <rect key="frame" x="5" y="0.0" width="109" height="36"/>
@@ -50,7 +50,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vXL-KP-1AO">
-                                        <rect key="frame" x="0.0" y="44" width="119" height="33"/>
+                                        <rect key="frame" x="0.0" y="47" width="119" height="33"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <state key="normal" title="Static Table VC">
                                             <color key="titleColor" red="0.29852169750000002" green="0.75442785020000003" blue="0.33716404439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -61,8 +61,8 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sjr-7o-Omx">
-                                <rect key="frame" x="192" y="266.33333333333331" width="167" height="74"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sjr-7o-Omx">
+                                <rect key="frame" x="192" y="266.33333333333331" width="167" height="119"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sna-vL-QVj">
                                         <rect key="frame" x="0.0" y="0.0" width="167" height="33"/>
@@ -75,13 +75,23 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCY-Vf-0WU">
-                                        <rect key="frame" x="56" y="41" width="55" height="33"/>
+                                        <rect key="frame" x="15" y="43" width="137" height="33"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                        <state key="normal" title="Search">
+                                        <state key="normal" title="Search Controller">
                                             <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="searchTableVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ftx-ni-ulM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qC-5b-YEU">
+                                        <rect key="frame" x="3" y="86" width="161" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <state key="normal" title="Search Bar Delegate">
+                                            <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="searchBarTVCBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ipQ-nR-Tzg"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -89,7 +99,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="b4g-Fb-L70" firstAttribute="top" secondItem="nS4-lf-Tru" secondAttribute="bottom" constant="8" id="0jw-fz-f04"/>
+                            <constraint firstItem="b4g-Fb-L70" firstAttribute="top" secondItem="nS4-lf-Tru" secondAttribute="bottom" constant="30" id="0jw-fz-f04"/>
                             <constraint firstItem="b4g-Fb-L70" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="H1Y-QQ-MuX"/>
                             <constraint firstItem="nS4-lf-Tru" firstAttribute="top" secondItem="EoU-gz-IUz" secondAttribute="bottom" constant="30" id="Hbn-Q9-H0U"/>
                             <constraint firstItem="EoU-gz-IUz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="P9S-Uq-MNm"/>
@@ -106,7 +116,8 @@
                         <segue destination="uXU-Yj-uDO" kind="show" identifier="showMyTableVC" id="LOu-f4-K3a"/>
                         <segue destination="K7i-xM-vMZ" kind="show" identifier="showShoppingListVC" id="Fhl-2S-LMh"/>
                         <segue destination="QwD-VR-euv" kind="show" identifier="showStaticTableVC" id="6yo-iV-nFv"/>
-                        <segue destination="NHd-Zb-xRc" kind="presentation" identifier="showSearchTableVC" modalPresentationStyle="automatic" id="WIU-8I-Cm6"/>
+                        <segue destination="I5u-qY-JsT" kind="show" identifier="showSearchTableVC" id="OuX-0z-B9v"/>
+                        <segue destination="nC8-dE-mDu" kind="show" identifier="searchBarVC" id="K99-H5-lwf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -244,9 +255,9 @@
         <scene sceneID="K3N-E7-vnn">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X11-dJ-W55" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tableViewController id="NdV-ei-Cc8" customClass="SearchTableVC" customModule="Pie" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="NdV-ei-Cc8" customClass="SearchTVC" customModule="Pie" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UKh-6w-SVi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -554,22 +565,51 @@
             </objects>
             <point key="canvasLocation" x="2182" y="126"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="7NX-Hy-qsH">
+        <!--Groceries-->
+        <scene sceneID="CiL-Bo-NUi">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NHd-Zb-xRc" sceneMemberID="viewController">
+                <tableViewController id="nC8-dE-mDu" customClass="SearchBarTVC" customModule="Pie" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="k70-hS-W5j">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchBarCell" id="K1U-z6-ePN">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K1U-z6-ePN" id="hdc-5x-Gin">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nC8-dE-mDu" id="NCg-GR-rSQ"/>
+                            <outlet property="delegate" destination="nC8-dE-mDu" id="K6Q-LH-iP4"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Groceries" id="ukv-SN-Bny"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OOh-I3-ncF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3793" y="2183"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="riV-Li-Utg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="I5u-qY-JsT" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="9vR-Vp-279"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="eXe-0Z-Jay">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
+                    <navigationItem key="navigationItem" id="VfL-ev-dBa"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ByR-9z-UH0">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="NdV-ei-Cc8" kind="relationship" relationship="rootViewController" id="m41-M6-oLz"/>
+                        <segue destination="NdV-ei-Cc8" kind="relationship" relationship="rootViewController" id="5b6-Zl-JGb"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qb8-SP-4Ni" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VwR-71-awO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3793" y="1524"/>
         </scene>

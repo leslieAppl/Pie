@@ -1,5 +1,5 @@
 //
-//  SearchTableVC.swift
+//  SearchBarTVC.swift
 //  Pie
 //
 //  Created by leslie on 3/8/20.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class SearchTableVC: UITableViewController {
+class SearchBarTVC: UITableViewController {
     
-    var searchTVCData = SearchTVCData()
+    var searchData = SearchTVCData()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,24 +21,34 @@ class SearchTableVC: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        goSearch()
+        setSearchBar()
         
     }
     
-    func goSearch() {
+    // set Search Bar at the Table Header View
+    func setSearchBar() {
         
         let searchController = UISearchController(searchResultsController: nil)
         
-        // The VC is also assigned as the delegate of the search controller
-        // through the searchResultsUpdater property.
         searchController.searchResultsUpdater = self
-        
         searchController.obscuresBackgroundDuringPresentation = false
         
+        // Assign Search Bar to the Table Header View
+//        tableView.tableHeaderView = searchController.searchBar
+         
+        // Assign Search Bar to the Navigation Item
         navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        
+        let searchBar = searchController.searchBar
+        searchBar.delegate = self
+        searchBar.placeholder = "Search Product"
+        searchBar.showsScopeBar = true
+        searchBar.scopeButtonTitles = ["Names", "Calories"]
+        searchBar.selectedScopeButtonIndex = 0
         
     }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -48,16 +58,14 @@ class SearchTableVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return searchTVCData.filteredItems.count
+        return searchData.filteredItems.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath)
-        
-        // if 'search' is "", cells display [items]. Else, cells display [items.filter()]
-        // in the Data Model.
-        let data = searchTVCData.filteredItems[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "searchBarCell", for: indexPath)
+
+        let data = searchData.filteredItems[indexPath.row]
         
         cell.textLabel?.text = data
 
@@ -112,7 +120,7 @@ class SearchTableVC: UITableViewController {
 
 }
 
-extension SearchTableVC: UISearchResultsUpdating {
+extension SearchBarTVC: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
         
@@ -120,10 +128,36 @@ extension SearchTableVC: UISearchResultsUpdating {
             
             let search = text.trimmingCharacters(in: .whitespaces)
             
-            searchTVCData.filterData(search: search)
+            searchData.filterDataForSearchBar(search: search)
             
             tableView.reloadData()
+            
         }
     }
 
+}
+
+extension SearchBarTVC: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        
+        searchData.selectedButton = selectedScope
+        
+        if selectedScope == 0 {
+            
+            searchBar.placeholder = "Search Product"
+            
+        } else {
+            
+            searchBar.placeholder = "Maximum Calories"
+            
+        }
+        
+        searchBar.text = ""
+        
+        searchData.filterDataForSearchBar(search: "")
+        
+        tableView.reloadData()
+        
+    }
 }

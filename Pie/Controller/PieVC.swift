@@ -50,6 +50,11 @@ class PieVC: UIViewController {
         
         performSegue(withIdentifier: "showSearchTableVC", sender: nil)
     }
+    
+    @IBAction func searchBarTVCBtnPressed(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "searchBarVC", sender: nil)
+    }
 }
 
 extension PieVC: MyModalDelegate {
