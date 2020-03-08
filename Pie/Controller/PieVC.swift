@@ -46,6 +46,10 @@ class PieVC: UIViewController {
         
     }
     
+    @IBAction func searchTableVC(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "showSearchTableVC", sender: nil)
+    }
 }
 
 extension PieVC: MyModalDelegate {

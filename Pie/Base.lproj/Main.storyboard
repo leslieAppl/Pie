@@ -16,13 +16,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's My Pie?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EoU-gz-IUz">
-                                <rect key="frame" x="108" y="148" width="159" height="31"/>
+                                <rect key="frame" x="108" y="148" width="159" height="30.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nS4-lf-Tru">
-                                <rect key="frame" x="47.666666666666657" y="209" width="280" height="50"/>
+                                <rect key="frame" x="47.666666666666657" y="208.33333333333334" width="280" height="50.000000000000028"/>
                                 <color key="backgroundColor" red="0.56078431370000004" green="0.81176470590000005" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="2nX-TB-CGh"/>
@@ -36,49 +36,67 @@
                                     <action selector="myModalButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zuu-AO-Qz1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUk-Nz-uy2">
-                                <rect key="frame" x="16" y="267" width="109" height="36"/>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
-                                <state key="normal" title="Shopping List">
-                                    <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="shoppingListBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iK8-zr-Hhs"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sna-vL-QVj">
-                                <rect key="frame" x="196" y="267" width="163" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Table View Controller">
-                                    <color key="titleColor" red="1" green="0.59851241440000003" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="tableVCBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hDa-8e-gOx"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vXL-KP-1AO">
-                                <rect key="frame" x="16" y="311" width="117" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Static Table VC">
-                                    <color key="titleColor" red="0.29852169750000002" green="0.75442785020000003" blue="0.33716404439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <action selector="staticTableBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RC9-Oa-8kD"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="b4g-Fb-L70">
+                                <rect key="frame" x="16" y="266.33333333333331" width="119" height="77"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUk-Nz-uy2">
+                                        <rect key="frame" x="5" y="0.0" width="109" height="36"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                        <state key="normal" title="Shopping List">
+                                            <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="shoppingListBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iK8-zr-Hhs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vXL-KP-1AO">
+                                        <rect key="frame" x="0.0" y="44" width="119" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <state key="normal" title="Static Table VC">
+                                            <color key="titleColor" red="0.29852169750000002" green="0.75442785020000003" blue="0.33716404439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="staticTableBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RC9-Oa-8kD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sjr-7o-Omx">
+                                <rect key="frame" x="192" y="266.33333333333331" width="167" height="74"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sna-vL-QVj">
+                                        <rect key="frame" x="0.0" y="0.0" width="167" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <state key="normal" title="Table View Controller">
+                                            <color key="titleColor" red="1" green="0.59851241440000003" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tableVCBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hDa-8e-gOx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCY-Vf-0WU">
+                                        <rect key="frame" x="56" y="41" width="55" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <state key="normal" title="Search">
+                                            <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="searchTableVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ftx-ni-ulM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="vXL-KP-1AO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="2Cp-fI-TXp"/>
-                            <constraint firstItem="kUk-Nz-uy2" firstAttribute="top" secondItem="nS4-lf-Tru" secondAttribute="bottom" constant="8" id="FSS-3F-18v"/>
+                            <constraint firstItem="b4g-Fb-L70" firstAttribute="top" secondItem="nS4-lf-Tru" secondAttribute="bottom" constant="8" id="0jw-fz-f04"/>
+                            <constraint firstItem="b4g-Fb-L70" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="H1Y-QQ-MuX"/>
                             <constraint firstItem="nS4-lf-Tru" firstAttribute="top" secondItem="EoU-gz-IUz" secondAttribute="bottom" constant="30" id="Hbn-Q9-H0U"/>
                             <constraint firstItem="EoU-gz-IUz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="P9S-Uq-MNm"/>
-                            <constraint firstItem="kUk-Nz-uy2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ZhJ-mg-dnB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sjr-7o-Omx" secondAttribute="trailing" constant="16" id="Spa-gq-by8"/>
                             <constraint firstItem="EoU-gz-IUz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="igs-fP-YhK"/>
-                            <constraint firstItem="vXL-KP-1AO" firstAttribute="top" secondItem="kUk-Nz-uy2" secondAttribute="bottom" constant="8" id="nTd-EP-Hip"/>
-                            <constraint firstItem="sna-vL-QVj" firstAttribute="top" secondItem="nS4-lf-Tru" secondAttribute="bottom" constant="8" id="qUB-WF-gPa"/>
+                            <constraint firstItem="sjr-7o-Omx" firstAttribute="top" secondItem="nS4-lf-Tru" secondAttribute="bottom" constant="8" id="j6V-lb-VAL"/>
                             <constraint firstItem="nS4-lf-Tru" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wJ6-3P-57s"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sna-vL-QVj" secondAttribute="trailing" constant="16" id="yJa-kb-YKz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -88,6 +106,7 @@
                         <segue destination="uXU-Yj-uDO" kind="show" identifier="showMyTableVC" id="LOu-f4-K3a"/>
                         <segue destination="K7i-xM-vMZ" kind="show" identifier="showShoppingListVC" id="Fhl-2S-LMh"/>
                         <segue destination="QwD-VR-euv" kind="show" identifier="showStaticTableVC" id="6yo-iV-nFv"/>
+                        <segue destination="NHd-Zb-xRc" kind="presentation" identifier="showSearchTableVC" modalPresentationStyle="automatic" id="WIU-8I-Cm6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -220,6 +239,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZuQ-D7-wsZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3794" y="864"/>
+        </scene>
+        <!--Groceries-->
+        <scene sceneID="K3N-E7-vnn">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X11-dJ-W55" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tableViewController id="NdV-ei-Cc8" customClass="SearchTableVC" customModule="Pie" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UKh-6w-SVi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" textLabel="tfw-e9-1Ul" style="IBUITableViewCellStyleDefault" id="SVr-D4-9KA">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SVr-D4-9KA" id="Tnt-gD-lHS">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tfw-e9-1Ul">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="NdV-ei-Cc8" id="5k1-vh-W3w"/>
+                            <outlet property="delegate" destination="NdV-ei-Cc8" id="fOn-II-s2f"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Groceries" id="XwR-vU-q8C"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="4510" y="1524"/>
         </scene>
         <!--Static Table-->
         <scene sceneID="ID1-XX-IUz">
@@ -495,7 +552,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dK5-tB-fY3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2023.2" y="126.35467980295567"/>
+            <point key="canvasLocation" x="2182" y="126"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7NX-Hy-qsH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NHd-Zb-xRc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="9vR-Vp-279"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="eXe-0Z-Jay">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NdV-ei-Cc8" kind="relationship" relationship="rootViewController" id="m41-M6-oLz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qb8-SP-4Ni" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3793" y="1524"/>
         </scene>
     </scenes>
     <resources>

@@ -130,4 +130,4 @@
 
 ## Static Table
 - Added static table
-
+- Added Search Control
