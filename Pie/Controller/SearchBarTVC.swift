@@ -22,7 +22,7 @@ class SearchBarTVC: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
+
         setSearchBar()
         
     }
@@ -33,7 +33,7 @@ class SearchBarTVC: UITableViewController {
         // If you have multiple scenes in your app, the UISearchController seems to hang around.
         // Here, preventing the UISearchController from hanging around.
         searchController.dismiss(animated: true, completion: nil)
-        
+
     }
     
     // set Search Bar at the Table Header View
@@ -42,13 +42,16 @@ class SearchBarTVC: UITableViewController {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.hidesNavigationBarDuringPresentation = false
-
+//        searchController.automaticallyShowsCancelButton = false
+        
         // Assign Search Bar to the Table Header View
-        tableView.tableHeaderView = searchController.searchBar
-         
+//        tableView.tableHeaderView = searchController.searchBar
+
         // Assign Search Bar to the Navigation Item
-//        navigationItem.searchController = searchController
-//        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        
+        print("search bar height: \(searchController.searchBar.layer.frame.height)")
         
         let searchBar = searchController.searchBar
         searchBar.delegate = self
@@ -133,6 +136,8 @@ class SearchBarTVC: UITableViewController {
 extension SearchBarTVC: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
+        
+        searchController.automaticallyShowsScopeBar = true
         
         if let text = searchController.searchBar.text {
             

@@ -44,6 +44,9 @@ class SearchTVC: UITableViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.hidesNavigationBarDuringPresentation = false
 
+        // Assign Search Bar to the Table Header View
+//        tableView.tableHeaderView = searchController.searchBar
+
         // asign search Bar to navigationItem
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
