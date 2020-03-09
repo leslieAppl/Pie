@@ -123,6 +123,46 @@
 
         func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) 
 
+- Shopping List Added UITableViewCell.EditingStyle.insert
+
+            // If the delegate does not implement this method and the UITableViewCell object is editable
+            // the cell has the UITableViewCell.EditingStyle.delete style set for it.
+            func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+                
+                return .insert
+                
+            }
+
+            // The hidden feature that simplifies the deletion of rows
+            func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+                
+
+                if editingStyle == UITableViewCell.EditingStyle.delete {
+            
+                    let row = indexPath.row
+                    let item = AppData.instance.items[row]
+                    
+                    AppData.instance.details.removeValue(forKey: item)
+                    AppData.instance.items.remove(at: row)
+                    
+                    // Always have to update model first, then delete table view cell
+                    tableView.deleteRows(at: [indexPath], with: .automatic)
+
+                } else if editingStyle == UITableViewCell.EditingStyle.insert {
+                    
+                    // insert a line of cell from 'ShowAddItemVC'
+        //            myIndex = indexPath
+        //            performSegue(withIdentifier: "showAddItem", sender: nil)
+                    
+                    // insert a blank line of cell
+                    AppData.instance.items.insert("", at: indexPath.row)
+                    AppData.instance.details[""] = ["no image", "not defined"]
+                    
+                    tableView.insertRows(at: [indexPath], with: .automatic)
+                    
+                }
+            }
+
 ## Table View Controller
 ### Introducing Table View Controller Class
 - Added MyTableVC

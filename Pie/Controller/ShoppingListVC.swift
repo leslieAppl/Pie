@@ -10,6 +10,8 @@ import UIKit
 
 class ShoppingListVC: UIViewController {
     
+    var myIndex: IndexPath!
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -82,9 +84,24 @@ class ShoppingListVC: UIViewController {
             }
         }
         
-        AppData.instance.items.append(final)
-        AppData.instance.details[final] = ["no image", "not defined"]
-        
+        if myIndex == nil {
+            // addpend element at the end of array
+            
+            AppData.instance.items.append(final)
+            AppData.instance.details[final] = ["no image", "not defined"]
+            
+        } else {
+            // insert element at the indexPath of array
+            
+            AppData.instance.items.insert(final, at: myIndex.row)
+            AppData.instance.details[final] = ["no image", "not defined"]
+
+            myIndex = nil
+            
+        }
+
+        // Table cell sorts as Model Array's order
+        // It doesn't matter 'tableView.insertRows(at: [indexPath], with: .automatic)'
         tableView.reloadData()
         
         navigationController?.popViewController(animated: true)
@@ -120,6 +137,14 @@ extension ShoppingListVC: UITableViewDataSource, UITableViewDelegate {
         
     }
     
+    // If the delegate does not implement this method and the UITableViewCell object is editable
+    // the cell has the UITableViewCell.EditingStyle.delete style set for it.
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        
+        return .insert
+        
+    }
+
     // The hidden feature that simplifies the deletion of rows
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
@@ -135,8 +160,21 @@ extension ShoppingListVC: UITableViewDataSource, UITableViewDelegate {
             // Always have to update model first, then delete table view cell
             tableView.deleteRows(at: [indexPath], with: .automatic)
 
+        } else if editingStyle == UITableViewCell.EditingStyle.insert {
+            
+            // insert a line of cell from 'ShowAddItemVC'
+//            myIndex = indexPath
+//            performSegue(withIdentifier: "showAddItem", sender: nil)
+            
+            // insert a blank line of cell
+            AppData.instance.items.insert("", at: indexPath.row)
+            AppData.instance.details[""] = ["no image", "not defined"]
+            
+            tableView.insertRows(at: [indexPath], with: .automatic)
+            
         }
     }
+    
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
