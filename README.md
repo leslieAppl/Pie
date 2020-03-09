@@ -137,3 +137,13 @@
 ## Search Bar
 - Implemented SearchBar delegate - selectedScopeButtonIndex
 - Debuged UISearchController hanging around in multiple scenes 
+
+        override func viewWillDisappear(_ animated: Bool) {
+            super.viewWillDisappear(true)
+            
+            // If you have multiple scenes in your app, the UISearchController seems to hang around.
+            // Here, preventing the UISearchController from hanging around.
+            searchController.dismiss(animated: true, completion: nil)
+            
+        }
+
