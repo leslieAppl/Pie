@@ -10,6 +10,8 @@ import UIKit
 
 class SearchBarTVC: UITableViewController {
     
+    let searchController = UISearchController(searchResultsController: nil)
+
     var searchData = SearchTVCData()
 
     override func viewDidLoad() {
@@ -25,20 +27,28 @@ class SearchBarTVC: UITableViewController {
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
+        // If you have multiple scenes in your app, the UISearchController seems to hang around.
+        // Here, preventing the UISearchController from hanging around.
+        searchController.dismiss(animated: true, completion: nil)
+        
+    }
+    
     // set Search Bar at the Table Header View
     func setSearchBar() {
         
-        let searchController = UISearchController(searchResultsController: nil)
-        
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        
+        searchController.hidesNavigationBarDuringPresentation = false
+
         // Assign Search Bar to the Table Header View
-//        tableView.tableHeaderView = searchController.searchBar
+        tableView.tableHeaderView = searchController.searchBar
          
         // Assign Search Bar to the Navigation Item
-        navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = false
+//        navigationItem.searchController = searchController
+//        navigationItem.hidesSearchBarWhenScrolling = false
         
         let searchBar = searchController.searchBar
         searchBar.delegate = self

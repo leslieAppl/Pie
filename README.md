@@ -136,3 +136,4 @@
 
 ## Search Bar
 - Implemented SearchBar delegate - selectedScopeButtonIndex
+- Debuged UISearchController hanging around in multiple scenes 

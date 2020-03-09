@@ -11,6 +11,7 @@ import UIKit
 class SearchTVC: UITableViewController {
     
 //    var searchTVCData = SearchTVCData()
+    let searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +26,17 @@ class SearchTVC: UITableViewController {
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // If you have multiple scenes in your app, the UISearchController seems to hang around.
+        // Here, preventing the UISearchController from hanging around.
+        searchController.dismiss(animated: true, completion: nil)
+        
+    }
+    
     // Set Search Bar in the Navigation Item
     func setSearchController() {
-        
-        let searchController = UISearchController(searchResultsController: nil)
         
         // The VC is also assigned as the delegate of the search controller
         // through the searchResultsUpdater property.
