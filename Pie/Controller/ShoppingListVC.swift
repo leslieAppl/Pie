@@ -129,6 +129,36 @@ extension ShoppingListVC: UITableViewDataSource, UITableViewDelegate {
         
     }
     
+    // The hidden feature that simplifies the deletion of rows
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            
+            let row = indexPath.row
+            let item = AppData.instance.items[row]
+            
+            AppData.instance.details.removeValue(forKey: item)
+            AppData.instance.items.remove(at: row)
+            
+            // Always have to update model first, then delete table view cell
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+        } else if editingStyle == UITableViewCell.EditingStyle.insert {
+            
+            // insert a line of cell from 'ShowAddItemVC'
+            //            myIndex = indexPath
+            //            performSegue(withIdentifier: "showAddItem", sender: nil)
+            
+            // insert a blank line of cell
+            AppData.instance.items.insert("", at: indexPath.row)
+            AppData.instance.details[""] = ["no image", "not defined"]
+            
+            tableView.insertRows(at: [indexPath], with: .automatic)
+            
+        }
+    }
+    
     //MARK: Table Delegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -145,36 +175,6 @@ extension ShoppingListVC: UITableViewDataSource, UITableViewDelegate {
         
     }
 
-    // The hidden feature that simplifies the deletion of rows
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
-
-        if editingStyle == UITableViewCell.EditingStyle.delete {
-    
-            let row = indexPath.row
-            let item = AppData.instance.items[row]
-            
-            AppData.instance.details.removeValue(forKey: item)
-            AppData.instance.items.remove(at: row)
-            
-            // Always have to update model first, then delete table view cell
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-
-        } else if editingStyle == UITableViewCell.EditingStyle.insert {
-            
-            // insert a line of cell from 'ShowAddItemVC'
-//            myIndex = indexPath
-//            performSegue(withIdentifier: "showAddItem", sender: nil)
-            
-            // insert a blank line of cell
-            AppData.instance.items.insert("", at: indexPath.row)
-            AppData.instance.details[""] = ["no image", "not defined"]
-            
-            tableView.insertRows(at: [indexPath], with: .automatic)
-            
-        }
-    }
-    
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         

@@ -28,9 +28,12 @@ class MyTableVC: UITableViewController {
     func doRefresh() {
         
         refresh = UIRefreshControl()
+        
+        // Associates a target object and action method with the control.
         refresh.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
         refresh.attributedTitle = NSAttributedString(string: "Refreshing Table..")
         
+        // control refresh with 'scroll view'
         tableView.refreshControl = refresh
     }
     
