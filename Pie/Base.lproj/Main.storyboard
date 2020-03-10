@@ -62,7 +62,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sjr-7o-Omx">
-                                <rect key="frame" x="192" y="266.33333333333331" width="167" height="119"/>
+                                <rect key="frame" x="192" y="266.33333333333331" width="167" height="162"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sna-vL-QVj">
                                         <rect key="frame" x="0.0" y="0.0" width="167" height="33"/>
@@ -94,6 +94,17 @@
                                             <action selector="searchBarTVCBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ipQ-nR-Tzg"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvF-7e-4BX">
+                                        <rect key="frame" x="23" y="129" width="121" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <state key="normal" title="Search Bar 2nd">
+                                            <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="searchBar2BtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z7w-tM-fri"/>
+                                            <action selector="searchBarTVCBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sos-w6-4vt"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -117,7 +128,8 @@
                         <segue destination="K7i-xM-vMZ" kind="show" identifier="showShoppingListVC" id="Fhl-2S-LMh"/>
                         <segue destination="QwD-VR-euv" kind="show" identifier="showStaticTableVC" id="6yo-iV-nFv"/>
                         <segue destination="I5u-qY-JsT" kind="show" identifier="showSearchTableVC" id="OuX-0z-B9v"/>
-                        <segue destination="nC8-dE-mDu" kind="show" identifier="searchBarVC" id="K99-H5-lwf"/>
+                        <segue destination="dp7-pV-JR8" kind="show" identifier="searchBarTVC" id="K99-H5-lwf"/>
+                        <segue destination="0Qa-dl-yjk" kind="show" identifier="searchBarTVC2" id="oVT-Bk-OWh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -597,7 +609,49 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OOh-I3-ncF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3793" y="2183"/>
+            <point key="canvasLocation" x="4510" y="2217"/>
+        </scene>
+        <!--Search BarTVC2-->
+        <scene sceneID="fzU-zG-0i3">
+            <objects>
+                <tableViewController id="fbB-so-mX1" customClass="SearchBarTVC2" customModule="Pie" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3uz-QU-be7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchBarTVC2Cell" textLabel="UUw-AE-8rQ" imageView="ibb-iB-cL0" style="IBUITableViewCellStyleDefault" id="HWI-DC-UvZ">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HWI-DC-UvZ" id="yM8-nm-UXu">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UUw-AE-8rQ">
+                                            <rect key="frame" x="96.666666666666686" y="0.0" width="262.33333333333331" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="bagels" id="ibb-iB-cL0">
+                                            <rect key="frame" x="16" y="0.0" width="65.666666666666686" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fbB-so-mX1" id="ZVw-1V-Ren"/>
+                            <outlet property="delegate" destination="fbB-so-mX1" id="lZF-iS-98B"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="9ci-A2-ljR"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8cJ-Uo-j3K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4510" y="2888"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="riV-Li-Utg">
@@ -618,12 +672,50 @@
             </objects>
             <point key="canvasLocation" x="3793" y="1524"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="R13-mw-m5b">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dp7-pV-JR8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="x3B-B5-epp"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XCc-1a-dZV">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nC8-dE-mDu" kind="relationship" relationship="rootViewController" id="kLk-yV-bD0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gZy-wf-a1I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3792.8000000000002" y="2216.7487684729067"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nTm-Mp-6qu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Qa-dl-yjk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Hzz-C2-PKT"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="djh-Nt-SOy">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fbB-so-mX1" kind="relationship" relationship="rootViewController" id="qiY-md-21B"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ywb-9f-xVd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3792.8000000000002" y="2887.6847290640394"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Toronto" width="864" height="645"/>
         <image name="bagels" width="150" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ee9-Q3-nxO"/>
+        <segue reference="Fhl-2S-LMh"/>
     </inferredMetricsTieBreakers>
 </document>

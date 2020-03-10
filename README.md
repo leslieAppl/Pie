@@ -187,3 +187,12 @@
             
         }
 
+## Search Bar 2
+- Implemented SearchBar hiding in the Table
+
+        In this example, the search bar is placed inside the header view of the table view. 
+        The table view content is offset with the same height as the search bar so that the
+        search bar is hidden at first. Upon scrolling up past the top edge of the table view, 
+        the search bar is revealed. Then when the search bar becomes active, it hides the 
+        navigation bar.
+

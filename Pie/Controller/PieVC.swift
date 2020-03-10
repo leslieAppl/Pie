@@ -10,7 +10,7 @@ import UIKit
 
 class PieVC: UIViewController {
     
-    let pieVC = MyModalVC(nibName: "MyModalVC", bundle: nil)
+    let myModalVC = MyModalVC(nibName: "MyModalVC", bundle: nil)
     
     @IBOutlet weak var statusLbl: UILabel!
     
@@ -21,11 +21,11 @@ class PieVC: UIViewController {
 
     @IBAction func myModalButtonPressed(_ sender: UIButton) {
         
-        pieVC.delegate = self
+        myModalVC.delegate = self
 
-        pieVC.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        myModalVC.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         
-        self.present(pieVC, animated: true, completion: nil)
+        self.present(myModalVC, animated: true, completion: nil)
     }
     
     @IBAction func shoppingListBtnPressed(_ sender: UIButton) {
@@ -53,8 +53,14 @@ class PieVC: UIViewController {
     
     @IBAction func searchBarTVCBtnPressed(_ sender: UIButton) {
         
-        performSegue(withIdentifier: "searchBarVC", sender: nil)
+        performSegue(withIdentifier: "searchBarTVC", sender: nil)
     }
+    
+    @IBAction func searchBar2BtnPressed(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "searchBarTVC2", sender: nil)
+    }
+    
 }
 
 extension PieVC: MyModalDelegate {

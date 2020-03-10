@@ -27,6 +27,8 @@
 		CE96546B241494C2007F57CF /* SearchTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96546A241494C2007F57CF /* SearchTVC.swift */; };
 		CE96546D241498FE007F57CF /* SearchTVCData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96546C241498FE007F57CF /* SearchTVCData.swift */; };
 		CE96546F2414DC6D007F57CF /* SearchBarTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96546E2414DC6D007F57CF /* SearchBarTVC.swift */; };
+		CEBFB5C02417318700E8A90C /* SearchBarTVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFB5BF2417318700E8A90C /* SearchBarTVC2.swift */; };
+		CEBFB5C2241732DE00E8A90C /* SearchBarTVC2Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBFB5C1241732DE00E8A90C /* SearchBarTVC2Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		CE96546A241494C2007F57CF /* SearchTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTVC.swift; sourceTree = "<group>"; };
 		CE96546C241498FE007F57CF /* SearchTVCData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTVCData.swift; sourceTree = "<group>"; };
 		CE96546E2414DC6D007F57CF /* SearchBarTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarTVC.swift; sourceTree = "<group>"; };
+		CEBFB5BF2417318700E8A90C /* SearchBarTVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarTVC2.swift; sourceTree = "<group>"; };
+		CEBFB5C1241732DE00E8A90C /* SearchBarTVC2Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarTVC2Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 				CE96546824137D4D007F57CF /* StaticTableVC.swift */,
 				CE96546A241494C2007F57CF /* SearchTVC.swift */,
 				CE96546E2414DC6D007F57CF /* SearchBarTVC.swift */,
+				CEBFB5BF2417318700E8A90C /* SearchBarTVC2.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 			children = (
 				CE553AC6240F75D800A2A428 /* AppData.swift */,
 				CE96546C241498FE007F57CF /* SearchTVCData.swift */,
+				CEBFB5C1241732DE00E8A90C /* SearchBarTVC2Data.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,11 +220,13 @@
 				CE96546F2414DC6D007F57CF /* SearchBarTVC.swift in Sources */,
 				CE553ACD240F79F500A2A428 /* ShFoodCellView.swift in Sources */,
 				CE553AD5240F8A8400A2A428 /* ShAddItemVC.swift in Sources */,
+				CEBFB5C02417318700E8A90C /* SearchBarTVC2.swift in Sources */,
 				CE553AD3240F8A1700A2A428 /* ShDetailVC.swift in Sources */,
 				CE43F849240CFA4500F5CEC7 /* MyModalVC.swift in Sources */,
 				CE9654672412A597007F57CF /* MyTableVC.swift in Sources */,
 				CE43F833240CF77D00F5CEC7 /* SceneDelegate.swift in Sources */,
 				CE96546D241498FE007F57CF /* SearchTVCData.swift in Sources */,
+				CEBFB5C2241732DE00E8A90C /* SearchBarTVC2Data.swift in Sources */,
 				CE553AC7240F75D800A2A428 /* AppData.swift in Sources */,
 				CE96546924137D4D007F57CF /* StaticTableVC.swift in Sources */,
 			);

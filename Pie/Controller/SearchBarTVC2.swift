@@ -1,18 +1,16 @@
 //
-//  SearchBarTVC.swift
+//  SearchBarTVC2.swift
 //  Pie
 //
-//  Created by leslie on 3/8/20.
+//  Created by leslie on 3/10/20.
 //  Copyright © 2020 leslie. All rights reserved.
 //
 
 import UIKit
 
-class SearchBarTVC: UITableViewController {
+class SearchBarTVC2: UITableViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
-
-    var searchData = SearchTVCData()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +20,8 @@ class SearchBarTVC: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-
-        setSearchBar()
+        
+        setupSearchControl()
         
     }
     
@@ -36,32 +34,24 @@ class SearchBarTVC: UITableViewController {
 
     }
     
-    // set Search Bar at the Table Header View
-    func setSearchBar() {
-
+    func setupSearchControl() {
+        
         searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.hidesNavigationBarDuringPresentation = false
-//        searchController.automaticallyShowsCancelButton = false
         
-        // Assign Search Bar to the Table Header View
-//        tableView.tableHeaderView = searchController.searchBar
-
-        // Assign Search Bar to the Navigation Item
-        navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = false
+        // A Boolean value that indicates whether this view controller's view is covered
+        // when the view controller or one of its descendants presents a view controller.
+        self.definesPresentationContext = true
         
-        print("search bar height: \(searchController.searchBar.layer.frame.height)")
+        self.tableView.tableHeaderView = searchController.searchBar
         
-        let searchBar = searchController.searchBar
-        searchBar.delegate = self
-        searchBar.placeholder = "Search Product"
-        searchBar.showsScopeBar = true
-        searchBar.scopeButtonTitles = ["Names", "Calories"]
-        searchBar.selectedScopeButtonIndex = 0
+        // set the content offset to the height of the search bar's height
+        // to hide it when the view is first presented.
+        self.tableView.contentOffset = CGPoint(x: 0, y: searchController.searchBar.frame.height)
         
     }
     
+    
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -70,17 +60,21 @@ class SearchBarTVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return searchData.filteredItems.count
+        
+        // If the search bar is active, use the searchResults data.
+        return searchController.isActive ?
+                SearchBarData.searchResults.count: SearchBarData.entries.count
+            
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "searchBarCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "searchBarTVC2Cell", for: indexPath)
 
-        let data = searchData.filteredItems[indexPath.row]
+        let entry = searchController.isActive ?
+            SearchBarData.searchResults[indexPath.row]: SearchBarData.entries[indexPath.row]
         
-        cell.textLabel?.text = data
+        cell.textLabel?.text = entry.title
+        cell.imageView?.image = UIImage(named: entry.image)
 
         return cell
     }
@@ -133,46 +127,18 @@ class SearchBarTVC: UITableViewController {
 
 }
 
-extension SearchBarTVC: UISearchResultsUpdating {
+extension SearchBarTVC2: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
         
-        searchController.automaticallyShowsScopeBar = true
-        
-        if let text = searchController.searchBar.text {
+        // If the search bar contains text, filter our data with the string
+        if let searchText = searchController.searchBar.text {
             
-            let search = text.trimmingCharacters(in: .whitespaces)
+            SearchBarData.filterContent(search: searchText)
             
-            searchData.filterDataForSearchBar(search: search)
-            
+            // Reload the table view with the search result data.
             tableView.reloadData()
-            
         }
     }
-
-}
-
-extension SearchBarTVC: UISearchBarDelegate {
     
-    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-        
-        searchData.selectedButton = selectedScope
-        
-        if selectedScope == 0 {
-            
-            searchBar.placeholder = "Search Product"
-            
-        } else {
-            
-            searchBar.placeholder = "Maximum Calories"
-            
-        }
-        
-        searchBar.text = ""
-        
-        searchData.filterDataForSearchBar(search: "")
-        
-        tableView.reloadData()
-        
-    }
 }
